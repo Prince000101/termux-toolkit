@@ -145,7 +145,7 @@ thelp                         Show all commands, usage, and info
 For questions, suggestions, or issues:
 
 - **GitHub**: [pricne/termux-toolkit](https://github.com/pricne/termux-toolkit)
-- **LinkedIn**: [Your LinkedIn Profile]([https://linkedin.com/in/your-profile](https://www.linkedin.com/in/prince-kumar-41659823b))
+- **LinkedIn**: [Profile](https://www.linkedin.com/in/prince-kumar-41659823b)
 
 ---
 
