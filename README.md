@@ -2,6 +2,65 @@
 
 A set of tools for downloading media on Android via Termux. Wraps `yt-dlp`, `spotDL`, `ani-cli`, and `aria2` into simple commands.
 
+---
+
+## Installation
+
+### Step 1 — Install Termux
+
+Download Termux from **F-Droid** (recommended — more up-to-date than Play Store):
+- [F-Droid: Termux](https://f-droid.org/en/packages/com.termux/)
+
+### Step 2 — Install the Toolkit
+
+```bash
+pkg update -y
+pkg install git -y
+git clone https://github.com/Prince000101/termux-toolkit
+cd termux-toolkit
+bash install.sh
+```
+
+### Step 3 — Setup Storage & Reload
+
+When Termux asks for storage permission, tap **Allow**. Then reload your shell:
+
+```bash
+source ~/.bashrc
+```
+
+> The installer runs `termux-setup-storage` automatically. If you skipped it, run it manually:
+> ```bash
+> termux-setup-storage
+> ```
+
+### Step 4 — Start Using It
+
+```bash
+thelp           # Show all commands
+vtool           # Start downloading videos
+vall            # Quick paste-and-download mode
+```
+
+---
+
+## Credits
+
+This project is a wrapper around these incredible open-source tools. Huge thanks to their developers.
+
+| Tool | What it does | GitHub |
+|------|-------------|--------|
+| **yt-dlp** | Downloads videos from YouTube and 1000+ sites | [yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp) |
+| **spotDL** | Downloads Spotify playlists from YouTube with metadata | [spotDL/spotify-downloader](https://github.com/spotDL/spotify-downloader) |
+| **ani-cli** | Browses, streams, and downloads anime | [pystardust/ani-cli](https://github.com/pystardust/ani-cli) |
+| **aria2** | Ultra-fast download utility (used for torrents) | [aria2/aria2](https://github.com/aria2/aria2) |
+| **FFmpeg** | Handles audio/video conversion and merging | [FFmpeg/FFmpeg](https://github.com/FFmpeg/FFmpeg) |
+| **you-get** | Alternative downloader for Chinese video sites | [soimort/you-get](https://github.com/soimort/you-get) |
+| **fzf** | Fuzzy finder used for interactive menus | [junegunn/fzf](https://github.com/junegunn/fzf) |
+| **YTS API** | Movie database used by ttget | [yts.mx/api](https://yts.mx/api) |
+
+---
+
 ## Tools
 
 | Command | What it does | Engine |
@@ -21,16 +80,7 @@ A set of tools for downloading media on Android via Termux. Wraps `yt-dlp`, `spo
 | `ytmp3 <URL>` | Download best MP3 audio |
 | `ytlist <URL>` | Download playlist as MP3s |
 
-## Installation
-
-```bash
-bash install.sh
-```
-
-Then reload aliases:
-```bash
-source ~/.bashrc
-```
+---
 
 ## Usage
 
@@ -114,6 +164,8 @@ and it downloads via aria2 magnet link.
 thelp                         Show all commands, usage, and info
 ```
 
+---
+
 ## Download Locations
 
 | Command | Save path |
@@ -144,8 +196,8 @@ thelp                         Show all commands, usage, and info
 
 For questions, suggestions, or issues:
 
-- **GitHub**: [pricne/termux-toolkit](https://github.com/pricne/termux-toolkit)
-- **LinkedIn**: [Profile](https://www.linkedin.com/in/prince-kumar-41659823b)
+- **GitHub**: [Prince000101/termux-toolkit](https://github.com/Prince000101/termux-toolkit)
+- **LinkedIn**: [Prince Kumar](https://www.linkedin.com/in/prince-kumar-41659823b)
 
 ---
 
