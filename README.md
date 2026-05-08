@@ -52,6 +52,23 @@ Run this to remove everything:
 cd termux-toolkit && bash uninstall.sh
 ```
 
+## Upgrade
+
+Pull the latest changes and update scripts only where needed:
+
+```bash
+cd termux-toolkit
+bash upgrade.sh
+source ~/.bashrc
+```
+
+The upgrade script will:
+1. Pull the latest code from GitHub
+2. Compare checksums — only update scripts that actually changed
+3. Update shell aliases if needed
+4. Verify all dependencies are installed
+5. Restore any local changes you made
+
 ---
 
 ## Credits
