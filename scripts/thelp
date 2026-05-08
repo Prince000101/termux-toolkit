@@ -1,0 +1,77 @@
+#!/bin/bash
+
+CYAN='\033[1;36m'
+GREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+RED='\033[1;31m'
+NC='\033[0m'
+
+echo -e "${CYAN}==========================================================${NC}"
+echo -e "${GREEN}          Termux Media Toolkit - Help                     ${NC}"
+echo -e "${CYAN}==========================================================${NC}"
+echo ""
+echo -e "${YELLOW}OVERVIEW${NC}"
+echo "  A set of tools for downloading media on Android via Termux."
+echo "  Each tool wraps a powerful engine into a simple command."
+echo ""
+
+echo -e "${YELLOW}COMMANDS${NC}"
+echo ""
+printf "  ${GREEN}%-12s${NC} %s\n" "vtool" "Video/YouTube downloader"
+printf "  ${GREEN}%-12s${NC} %s\n" ""  "Interactive menu or vtool <URL>"
+printf "  ${GREEN}%-12s${NC} %s\n" ""  "y-dlp engine: best MP4, MP3, playlists"
+echo ""
+
+printf "  ${GREEN}%-12s${NC} %s\n" "vall" "Universal quick downloader"
+printf "  ${GREEN}%-12s${NC} %s\n" ""  "Paste any URL, auto-downloads, loops"
+printf "  ${GREEN}%-12s${NC} %s\n" ""  "Supports YouTube, Spotify, and more"
+echo ""
+
+printf "  ${GREEN}%-12s${NC} %s\n" "tsopt" "Spotify music downloader"
+printf "  ${GREEN}%-12s${NC} %s\n" ""  "Download tracks, albums, playlists"
+printf "  ${GREEN}%-12s${NC} %s\n" ""  "spotDL engine: full metadata + lyrics"
+echo ""
+
+printf "  ${GREEN}%-12s${NC} %s\n" "tani" "Anime downloader & streamer"
+printf "  ${GREEN}%-12s${NC} %s\n" ""  "Search, stream, or batch download"
+printf "  ${GREEN}%-12s${NC} %s\n" ""  "ani-cli engine: episodes + Syncplay"
+echo ""
+
+printf "  ${GREEN}%-12s${NC} %s\n" "ttget" "Movie torrent downloader"
+printf "  ${GREEN}%-12s${NC} %s\n" ""  "Search YTS, pick quality, download"
+printf "  ${GREEN}%-12s${NC} %s\n" ""  "aria2 engine: fast magnet downloads"
+echo ""
+
+echo -e "${YELLOW}QUICK ALIASES${NC}"
+echo ""
+printf "  ${GREEN}%-12s${NC} %s\n" "ytvideo <URL>" "Download best MP4 video"
+printf "  ${GREEN}%-12s${NC} %s\n" "ytmp3 <URL>" "Download best MP3 audio"
+printf "  ${GREEN}%-12s${NC} %s\n" "ytlist <URL>" "Download playlist as MP3s"
+echo ""
+
+echo -e "${YELLOW}USAGE NOTES${NC}"
+echo "  - Every command supports -h or --help for detailed usage"
+echo "  - Pass a URL as argument to skip menus and download directly"
+echo "  - Press Ctrl+C at any time to cancel"
+echo ""
+
+echo -e "${YELLOW}DOWNLOAD LOCATIONS${NC}"
+echo "  ~/storage/downloads/          vtool, vall, ttget"
+echo "  ~/storage/downloads/Music/    tsopt"
+echo "  ~/storage/downloads/Anime/    tani"
+echo ""
+
+echo -e "${YELLOW}TROUBLESHOOTING${NC}"
+echo "  vtool fails    -> pip install --upgrade yt-dlp"
+echo "  tsopt fails    -> pip install spotdl"
+echo "  ttget timeout  -> use a VPN or Cloudflare WARP"
+echo "  tani no source -> use tani -d (download) instead of stream"
+echo ""
+
+echo -e "${YELLOW}DEVELOPER${NC}"
+echo "  Project: https://github.com/pricne/termux-toolkit"
+echo ""
+
+echo -e "${CYAN}==========================================================${NC}"
+echo -e "${GREEN}        Run any command with -h for detailed help           ${NC}"
+echo -e "${CYAN}==========================================================${NC}"

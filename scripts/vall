@@ -1,0 +1,68 @@
+#!/bin/bash
+
+CYAN='\033[1;36m'
+GREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+RED='\033[1;31m'
+NC='\033[0m'
+
+DOWNLOAD_DIR="$HOME/storage/downloads"
+mkdir -p "$DOWNLOAD_DIR"
+
+show_help() {
+    echo -e "${CYAN}vall${NC} - Universal quick downloader"
+    echo ""
+    echo "Usage:"
+    echo "  vall                    Interactive loop mode"
+    echo "  vall <URL>             Download single URL and exit"
+    echo "  vall -h|--help         Show this help"
+    echo ""
+    echo "Accepts YouTube URLs, Spotify URLs, and any yt-dlp-compatible link."
+    echo "Auto-detects Spotify and uses spotDL for those."
+    echo ""
+    echo "All downloads go to: $DOWNLOAD_DIR"
+    exit 0
+}
+
+[ "$1" = "-h" ] || [ "$1" = "--help" ] && show_help
+
+single_download() {
+    local url="$1"
+    if echo "$url" | grep -qiE "^(spotify:|https?://[^ ]*spotify\.)"; then
+        echo -e "${YELLOW}-> Spotify detected, using spotDL...${NC}"
+        if command -v spotdl &>/dev/null; then
+            spotdl "$url" --output "$DOWNLOAD_DIR" 2>/dev/null || echo -e "${RED}spotDL failed${NC}"
+        else
+            echo -e "${RED}spotDL not installed. Run: pip install spotdl${NC}"
+        fi
+    else
+        echo -e "${YELLOW}-> Downloading best video...${NC}"
+        yt-dlp -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/b" -P "$DOWNLOAD_DIR" "$url"
+    fi
+    echo -e "${GREEN}Done${NC}"
+}
+
+if [ -n "$1" ]; then
+    single_download "$1"
+    exit $?
+fi
+
+clear
+echo -e "${CYAN}========================================${NC}"
+echo -e "${GREEN}     VALL - Universal Quick Downloader  ${NC}"
+echo -e "${CYAN}========================================${NC}"
+echo ""
+echo -e "${YELLOW}Paste any URL and press Enter${NC}"
+echo -e "${YELLOW}Auto-downloads best quality${NC}"
+echo -e "${YELLOW}YouTube, Spotify, and more${NC}"
+echo -e "${RED}Press Ctrl+C or enter blank line to exit${NC}"
+echo ""
+
+while true; do
+    echo -e "${GREEN}──────────────────────────────────────${NC}"
+    read -p "URL: " URL
+    [ -z "$URL" ] && break
+    single_download "$URL"
+done
+
+echo -e "\n${CYAN}Goodbye!${NC}"
