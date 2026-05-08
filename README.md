@@ -44,6 +44,16 @@ vall            # Quick paste-and-download mode
 
 ---
 
+## Uninstallation
+
+Run this to remove everything:
+
+```bash
+cd termux-toolkit && bash uninstall.sh
+```
+
+---
+
 ## Credits
 
 This project is a wrapper around these incredible open-source tools. Huge thanks to their developers.
