@@ -1,0 +1,15 @@
+auth:
+  image: python:${{TAG}}
+  build:
+    context: .
+    dockerfile: Dockerfile.auth
+    args:
+      NODE_ENV: production
+  ports:
+    - "5000:5000"
+  environment:
+    - LOG_LEVEL=INFO
+    - CACHE_TTL=3600
+  volumes:
+    - auth_data:/var/lib/data
+  restart: unless-stopped
